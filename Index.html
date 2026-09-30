@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our First Kiss 💋</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;800&display=swap">
+<style>
+:root{--bg1:#2b0a3d;--bg2:#5a0f4a;--bg3:#1a0724;--rose:#ff4d8d;--blush:#ffe1ea;--gold:#ffc46b;--card:rgba(255,255,255,.09);--line:rgba(255,255,255,.2);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#240835;--bg2:#4a0c3d;--bg3:#150520}}
+:root[data-theme="dark"]{--bg1:#240835;--bg2:#4a0c3d;--bg3:#150520}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;height:100%;overflow:hidden;color:var(--blush);font-family:Nunito,system-ui,sans-serif;background:var(--bg3);background:radial-gradient(120% 90% at 50% 0%,var(--bg2),var(--bg1) 55%,var(--bg3));user-select:none}
+#stage{position:relative;z-index:2;height:100%;display:grid;place-items:center;padding:16px;overflow-y:auto}
+.card{width:min(440px,100%);text-align:center;padding:30px 22px 24px;border-radius:30px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(0,0,0,.35);animation:in .6s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes in{from{opacity:0;transform:translateY(26px) scale(.95)}}
+.big{font-size:66px;line-height:1;animation:beat 1.3s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.18)}}
+h1{font-family:'Dancing Script',cursive,serif;font-size:clamp(36px,10vw,48px);line-height:1.1;margin:.25em 0 .3em;color:transparent;background:linear-gradient(90deg,#fff,#ffb3d0,#fff);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 12px rgba(255,77,141,.75));animation:sh 4s linear infinite}
+p{font-size:18px;line-height:1.6;margin:0 0 22px;min-height:3.2em}
+.w{display:inline-block;opacity:0;animation:up .5s forwards}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.btn{font:800 18px Nunito,sans-serif;color:#fff;border:0;border-radius:999px;padding:14px 30px;background:linear-gradient(135deg,var(--rose),#ff8a5c);box-shadow:0 8px 24px rgba(255,77,141,.5);cursor:pointer;transition:transform .25s}
+.btn:active{transform:scale(.95)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.row{display:flex;gap:18px;justify-content:center;align-items:center;min-height:90px}
+.yes{transition:transform .3s cubic-bezier(.2,.9,.3,1.4)}
+.no{background:rgba(255,255,255,.14);box-shadow:none;border:1px solid var(--line);transition:left .35s cubic-bezier(.3,1.4,.5,1),top .35s cubic-bezier(.3,1.4,.5,1)}
+.dots{display:flex;gap:7px;justify-content:center;margin-top:20px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.3s}
+.dots i.on{background:var(--rose);transform:scale(1.5)}
+.fh,.ch,.fall{position:fixed;pointer-events:none}
+.fh{bottom:-40px;z-index:1;opacity:.5;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) rotate(30deg)}}
+.ch{z-index:9;font-size:22px;animation:pop .95s ease-out forwards}
+@keyframes pop{from{transform:translate(-50%,-50%)}to{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.3);opacity:0}}
+.fall{top:-40px;z-index:8;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(112vh) rotate(360deg)}}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:5;pointer-events:none}
+#toast{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));z-index:20;max-width:88vw;text-align:center;padding:12px 20px;border-radius:16px;background:#fff;color:#4a0c3d;font-weight:800;opacity:0;transform:translate(-50%,20px);transition:.3s;pointer-events:none}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.fh{display:none}.big{animation:none}}
+
+@keyframes sh{to{background-position:-200% 0}}
+.late{opacity:0;animation:up .6s forwards}
+.btn:disabled{pointer-events:none}
+.yes{animation:glow 1.4s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 38px 8px rgba(255,77,141,.75)}}
+.ecg{width:100%;height:64px}
+.ecg path{fill:none;stroke:var(--rose);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 0 6px var(--rose));animation:draw 2.4s .3s forwards,flick 1s 2.7s infinite alternate}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes flick{to{opacity:.4}}
+.pair{position:relative;height:72px}
+.pair span{position:absolute;left:50%;top:0;font-size:56px}
+.pair span:first-child{margin-left:-118px;animation:mL 1.8s .4s cubic-bezier(.6,0,.2,1) forwards}
+.pair span:last-child{margin-left:62px;animation:mR 1.8s .4s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes mL{to{transform:translateX(62px)}}
+@keyframes mR{to{transform:translateX(-62px)}}
+.pair::after{content:"";position:absolute;left:50%;top:34px;width:10px;height:10px;margin:-5px;border-radius:50%;border:3px solid var(--rose);opacity:0;animation:ring 1.4s 2.1s infinite}
+@keyframes ring{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(14)}}
+.cnt{margin:0 0 20px}
+.cnt b{display:block;font:700 76px 'Dancing Script',cursive;color:var(--gold);text-shadow:0 0 24px rgba(255,196,107,.6)}
+.lb{display:block;font-size:14px;opacity:0;margin:0 0 20px;animation:up .6s 2.4s forwards}
+.bar{height:10px;border-radius:9px;background:var(--line);overflow:hidden;margin:0 0 10px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--gold));animation:fill 3.6s .6s ease-in-out forwards}
+@keyframes fill{to{width:100%}}
+.cd{font:700 120px 'Dancing Script',cursive;color:#fff;text-shadow:0 0 40px var(--rose);animation:zoom 1s ease-out}
+@keyframes zoom{from{transform:scale(2.6);opacity:0}to{transform:scale(1);opacity:1}}
+.party h1{animation:sh 4s linear infinite,tada 1.4s ease-in-out infinite}
+@keyframes tada{50%{transform:scale(1.08) rotate(-2deg)}}
+.st{position:fixed;width:2px;height:2px;border-radius:50%;background:#fff;z-index:0;animation:tw 3s infinite}
+@keyframes tw{50%{opacity:.1}}
+.ss{position:fixed;width:130px;height:2px;z-index:1;background:linear-gradient(90deg,transparent,#fff);animation:shoot 1.1s linear forwards}
+@keyframes shoot{from{transform:translate(0,0) rotate(149deg);opacity:1}to{transform:translate(-460px,270px) rotate(149deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.st,.ss{display:none}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<main id="stage"><section class="card" id="card"></section></main>
+<div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),rnd=(a,b)=>Math.random()*(b-a)+a,pick=a=>a[rnd(0,a.length)|0];
+const S=[
+{e:"💌",t:"Hey Lekha…",p:"I have something to tell you, my kutri. It's about 27 September. It's about us.",b:"Open it 💗"},
+{e:"✨",t:"Today, the world went quiet",p:"One second you were right there, and the next my whole heart forgot how to do anything else.",b:"And then? 👀"},
+{v:'<div class="pair"><span>💗</span><span>💗</span></div>',t:"27 September, our first kiss",p:"Soft. Nervous. Perfect. It lasted a moment, but I felt it everywhere, like time pressed pause just for us.",b:"Keep going 💕"},
+{e:"👀",t:"What I noticed",p:"At first your lips stayed closed and I just kissed them, slowly. Then I held your neck… and you closed your eyes and let yourself flow into it. And then you kissed me back, lips opening, and I forgot where I was.",b:"Ohh 🙈"},
+{v:'<svg class="ecg" viewBox="0 0 300 60"><path pathLength="1" d="M0 30H70l10-22 14 44 12-30 8 8H190l10-16 12 34 10-18H300"/></svg>',t:"How I felt",p:"Butterflies. A racing heart. Shaky hands. A smile I still can't switch off. My heart threw an interrupt and nothing could handle it 😅",b:"Aww 🥹"},
+{e:"🔁",t:"The number you know",p:"Times I imagined our first kiss before 27 September:",x:'<div class="cnt"><b id="cnt">0</b><small class="lb" style="animation-delay:3s">…and then it finally happened 🥹💋</small></div>',r:()=>setTimeout(()=>{let n=0;const el=$('#cnt'),iv=setInterval(()=>{n+=8;el.textContent=Math.min(n,426);if(n>=426)clearInterval(iv)},35)},900),b:"Stop it 🙈"},
+{e:"😏",t:"Now, a little teasing…",p:"Don't act like you weren't blushing, kutri. I saw it. And then you looked at me and said, 'You don't know how to kiss.' 😤 Rude. Very rude.",b:"Hehe 😂"},
+{e:"📺",t:"My promise",p:"Next time, I will watch a tutorial first. Full HD. Taking notes. And you, Lekha, will be my practical exam. 😌",x:'<div class="bar"><i></i></div><small class="lb">Loading kiss_masterclass.mp4…</small>',b:"Deal 🤝"},
+{e:"🥹",t:"Why it's so special",p:"Because it was with you. Not just the kiss, you. Even a beginner like me got the best first kiss ever.",b:"One more thing… 💍"}
+];
+const X=["Hmm… my finger slipped 🙈","The No button is on a coffee break ☕","Error 404: 'No' not found 🚫","Not allowed. I checked. 📜","The No button is scared of your smile 😳","It's shy. Try the big glowing one 😏","Wrong answer detected 🚨","Sorry, No is out of order 🚧","Nice try, kutri 😏","Kutri says NO to No 🚫"];
+const card=$('#card');let i=0,party=false,tt;
+const restart=()=>{card.style.animation='none';card.offsetHeight;card.style.animation=''};
+const words=p=>p.split(" ").map((w,k)=>`<span class="w" style="animation-delay:${.3+k*.09}s">${w}&nbsp;</span>`).join("");
+const dots=()=>`<div class="dots">${S.map((_,k)=>`<i class="${k==i?'on':''}"></i>`).join("")}</div>`;
+function show(){
+ const s=S[i],n=s.p.split(" ").length;let d=.3+n*.09+.5;if(s.x)d+=1.3;
+ card.innerHTML=`${s.v||`<div class="big">${s.e}</div>`}<h1>${s.t}</h1><p>${words(s.p)}</p>${s.x||''}<button class="btn late" id="nx" disabled style="animation-delay:${d}s">${s.b}</button>${dots()}`;
+ restart();s.r&&s.r();
+ const nx=$('#nx');setTimeout(()=>nx.disabled=false,d*1000);
+ nx.onclick=()=>{i++;i<S.length?show():ask()};
+}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1900)}
+function dodge(b){
+ if(b.parentNode!==document.body){const r=b.getBoundingClientRect();b.style.cssText=`position:fixed;z-index:10;width:${r.width}px;left:${r.left}px;top:${r.top}px`;document.body.appendChild(b);b.offsetHeight}
+ b.style.left=rnd(12,innerWidth-b.offsetWidth-12)+'px';
+ b.style.top=rnd(70,innerHeight-b.offsetHeight-90)+'px';
+}
+function ask(){
+ let c=3;card.innerHTML='<div class="cd" id="cd">3</div><p>Get ready…</p>';restart();
+ const iv=setInterval(()=>{c--;if(c>0){const d=$('#cd');d.textContent=c;d.style.animation='none';d.offsetHeight;d.style.animation=''}else{clearInterval(iv);question()}},1000);
+}
+function question(){
+ card.innerHTML=`<div class="big">💍</div><h1>Lekha, one last question</h1><p>${words("Will you be with me, together till the end of our life, and be my girlfriend?")}</p><div class="row"><button class="btn yes" id="yes">Yes 💖</button><button class="btn no" id="no">No</button></div>`;
+ restart();
+ let n=0;const yes=$('#yes'),no=$('#no');
+ const nope=e=>{e.preventDefault();toast(X[n%X.length]);n++;dodge(no);yes.style.transform=`scale(${Math.min(1+n*.1,1.8)})`};
+ no.addEventListener('pointerdown',nope);
+ no.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')nope(e)});
+ no.addEventListener('click',e=>{if(!e.detail)nope(e)});
+ yes.onclick=celebrate;
+}
+function celebrate(){
+ party=true;card.classList.add("party");const no=$('#no');no&&no.remove();$('#toast').classList.remove('on');
+ card.innerHTML=`<div class="big">🎆</div><h1>You said YES, Lekha!</h1><p>27 September was only the beginning. Together till the end of our life. You just made me the happiest person alive, my kutri. Thank you for being my calm, my chaos and my favourite person. I love you. Always. (And yes, I am still watching that tutorial 😌) 💖</p><button class="btn" onclick="location.reload()">Relive it 💋</button>`;
+ restart();
+ const go=()=>R.push({x:rnd(.1,.9)*innerWidth,y:innerHeight,ty:rnd(.12,.5)*innerHeight});
+ for(let k=0;k<7;k++)setTimeout(go,k*220);
+ setInterval(go,420);
+ setInterval(()=>{const s=document.createElement('span');s.className='fall';s.textContent=pick(['🎆','🎇','🧨','🎉','💖','✨']);s.style.left=rnd(0,94)+'vw';s.style.fontSize=rnd(20,38)+'px';s.style.animationDuration=rnd(3,6)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),6200)},180);
+}
+addEventListener('pointerdown',e=>{
+ if(party)burst(e.clientX,e.clientY);
+ for(let k=0;k<6;k++){const h=document.createElement('span');h.className='ch';h.textContent=pick(['💗','💖','💋','✨','💕']);h.style.left=e.clientX+'px';h.style.top=e.clientY+'px';h.style.setProperty('--dx',rnd(-60,60)+'px');h.style.setProperty('--dy',rnd(-120,-30)+'px');document.body.appendChild(h);setTimeout(()=>h.remove(),1000)}
+});
+setInterval(()=>{const h=document.createElement('span');h.className='fh';h.textContent=pick(['💗','💕','🤍','💖']);h.style.left=rnd(0,96)+'vw';h.style.fontSize=rnd(14,30)+'px';h.style.animationDuration=rnd(8,14)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),14200)},800);
+const c=$('#fx'),x=c.getContext('2d');let P=[],R=[];
+function fit(){const d=devicePixelRatio||1;c.width=innerWidth*d;c.height=innerHeight*d;x.setTransform(d,0,0,d,0,0)}
+fit();addEventListener('resize',fit);
+function burst(px,py){const h=rnd(0,360);for(let k=0;k<110;k++){const a=rnd(0,6.283),s=rnd(1,6.5);P.push({x:px,y:py,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,h:h+rnd(-25,25)})}}
+(function loop(){
+ x.globalCompositeOperation='destination-out';x.fillStyle='rgba(0,0,0,.2)';x.fillRect(0,0,innerWidth,innerHeight);
+ x.globalCompositeOperation='lighter';
+ for(const r of R){r.y-=9;x.fillStyle="#fff";x.fillRect(r.x-1.5,r.y,3,10);if(r.y<=r.ty){burst(r.x,r.y);r.d=1}}R=R.filter(r=>!r.d);
+ for(const p of P){p.x+=p.vx;p.y+=p.vy;p.vx*=.98;p.vy=p.vy*.98+.07;p.l-=.013;x.fillStyle=`hsla(${p.h},100%,60%,${Math.max(p.l,0)})`;x.beginPath();x.arc(p.x,p.y,2.2,0,6.283);x.fill()}
+ P=P.filter(p=>p.l>0);requestAnimationFrame(loop);
+})();
+for(let k=0;k<60;k++){const t=document.createElement('i');t.className='st';t.style.cssText=`left:${rnd(0,100)}vw;top:${rnd(0,100)}vh;animation-delay:${rnd(0,3)}s;animation-duration:${rnd(2,5)}s`;document.body.appendChild(t)}
+setInterval(()=>{const t=document.createElement('i');t.className='ss';t.style.left=rnd(40,100)+'vw';t.style.top=rnd(0,35)+'vh';document.body.appendChild(t);setTimeout(()=>t.remove(),1200)},6000);
+show();
+</script>
+</body>
+</html>
